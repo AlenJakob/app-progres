@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!--  this is how we laod only Db files  -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+<div class="main">
+<h1 class="header">Progression Exercises</h1>
+  <div class="container">
+
+    <form id="add-task">
+  <input type="text" id="name" name="name" placeholder="exercise name">
+  <label for="series">How many Series</label><input type="number" id="series" value="0" name="series">
+  <label for="reps">How many Reps</label><input type="number" id="reps" value="0" name="reps">
+  <button>add exercise</button>
+    </form>
+    <ul id="exercise-list">
+
+    </ul>
+
+  </div>
+
+
+  <script>
+    // Initialize Firebase config from Db
+    var config = {
+      apiKey: "AIzaSyCRmJC-1Tr0XNkDft16HKCPX5z9AdUXhPo",
+      authDomain: "progress-db.firebaseapp.com",
+      databaseURL: "https://progress-db.firebaseio.com",
+      projectId: "progress-db",
+      storageBucket: "",
+      messagingSenderId: "579417290655"
+    };
+    firebase.initializeApp(config);
+    const db = firebase.firestore();
+    db.settings({ timestampsInSnapshots: true});
+  </script>
+      <script src="app.js"></script>
+    </body>
+</div>
+</html>
